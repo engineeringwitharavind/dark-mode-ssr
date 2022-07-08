@@ -3,15 +3,9 @@ import styled from "styled-components";
 import DarkToggle from "../components/DarkToggle";
 
 const Home = () => {
-	const [hasMounted, setHasMounted] = React.useState(false);
-
-	React.useEffect(() => {
-		setHasMounted(true);
-	}, []);
-
 	return (
 		<Wrapper>
-			{hasMounted && <DarkToggle />}
+			<DarkToggle />
 			<Text>
 				Next.js <HighLightedText>theming</HighLightedText> with server-side
 				rendering.
@@ -27,12 +21,6 @@ const Wrapper = styled.div`
 	align-items: center;
 	padding: 1rem;
 	gap: 1rem;
-`;
-
-const Toggle = styled.button`
-	background: none;
-	border: none;
-	color: inherit;
 `;
 
 const Text = styled.h1`
