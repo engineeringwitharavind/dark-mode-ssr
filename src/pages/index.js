@@ -1,24 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { ThemeContext } from "../components/Theme/ThemeContext";
+import DarkToggle from "../components/DarkToggle";
 
 const Home = () => {
-	const { colorMode, setColorMode } = React.useContext(ThemeContext);
+	const [hasMounted, setHasMounted] = React.useState(false);
+
+	React.useEffect(() => {
+		setHasMounted(true);
+	}, []);
 
 	return (
 		<Wrapper>
-			<Toggle>
-				<label>
-					<input
-						type="checkbox"
-						checked={colorMode === "dark"}
-						onChange={(ev) => {
-							setColorMode(ev.target.checked ? "dark" : "light");
-						}}
-					/>
-					Dark
-				</label>
-			</Toggle>
+			{hasMounted && <DarkToggle />}
 			<Text>
 				Next.js <HighLightedText>theming</HighLightedText> with server-side
 				rendering.

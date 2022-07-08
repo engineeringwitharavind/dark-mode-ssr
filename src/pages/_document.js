@@ -5,12 +5,6 @@ import {
 	FallbackStyles,
 	MagicScriptTag,
 } from "../components/Theme/MagicScriptTag";
-import Script from "next/script";
-import {
-	COLORS,
-	COLOR_MODE_KEY,
-	INITIAL_COLOR_MODE_CSS_PROP,
-} from "../components/Theme/colors";
 
 export default class MyDocument extends Document {
 	static async getInitialProps(ctx) {
